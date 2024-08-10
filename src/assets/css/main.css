@@ -1,0 +1,152 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: #f9f7f7;
+}
+
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: left;
+	color: #2c3e50;
+	padding: 0;
+	margin: 0;
+}
+
+.menu {
+	background: #2c3e50;
+}
+
+.menu img {
+	height: 50px;
+	padding: 10px;
+}
+
+.menu a {
+	color: #eee;
+	font-weight: 900;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.card {
+	border: 0;
+	border-radius: 0;
+	box-shadow: 0px 0px 10px -8px #000;
+}
+
+.card-header,
+.card-footer,
+.modal-header,
+.modal-footer {
+	background: #2c3e50;
+	border-radius: 0 !important;
+}
+
+.card-title,
+.modal-title {
+	color: #eee;
+}
+
+.form-control {
+	border: 0;
+	border-radius: 50px;
+	padding: 5px 10px 5px 10px;
+	margin: 0;
+}
+
+input[type='checkbox']:checked {
+	background-color: #42b983 !important;
+	border: 1px solid #42b983 !important;
+}
+
+.form-control:focus {
+	border-color: #cccccc;
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: #f9f9f9;
+}
+
+.btn {
+	font-weight: 900;
+}
+
+.btn:focus:hover,
+.btn:focus,
+.btn:active,
+.btn:visited {
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.btn-primary {
+	background: #42b983;
+	border: 1px solid #42b983;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:visited {
+	background: #42b983;
+	border: 1px solid #42b983;
+	opacity: 0.9;
+}
+
+.btn-danger {
+	background: #aa3f3f;
+	border: 1px solid #aa3f3f;
+}
+
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger:visited {
+	background: #aa3f3f;
+	border: 1px solid #aa3f3f;
+	opacity: 0.9;
+}
+
+.item-grid {
+	display: flex;
+	flex-direction: row;
+}
+
+.item-col-1 {
+	width: 30px;
+	align-self: center;
+	margin-right: 0px;
+}
+
+.item-col-3 {
+	width: 30px;
+	align-self: center;
+	justify-items: end;
+	margin-left: 10px;
+}
+
+.item-col-2 {
+	flex: auto;
+}
+
+.modal-content {
+	border: 0 !important;
+}
+
+.modal-header {
+	font-size: 24px !important;
+	font-weight: 600;
+}
+
+.modal {
+	display: flex !important;
+	background: #00000066 !important;
+}
+
+.modal-dialog {
+	width: 100vw !important;
+	align-self: center;
+}
