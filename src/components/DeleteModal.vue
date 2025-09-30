@@ -4,14 +4,13 @@
 			<div class="modal-content">
 				<div class="modal-header" data-bs-theme="dark">
 					<div class="modal-title h5">Delete</div>
-					<div class="w-100 text-end">
-						<i class="bi bi-x-square text-light" role="button" @click="cancelButton"></i>
+					<div class="w-100 text-end item-close">
+						<i class="bi bi-x text-light" role="button" @click="cancelButton"></i>
 					</div>
 				</div>
 				<div class="modal-body py-5">
 					<p>
-						Deseja realmente deletar <b>{{ text }}</b
-						>?
+						Deseja realmente deletar <b>{{ text }}</b>?
 					</p>
 				</div>
 				<div class="modal-footer">
@@ -24,19 +23,19 @@
 </template>
 
 <script setup>
-	import { defineEmits, defineProps } from 'vue';
+import { defineEmits, defineProps } from 'vue';
 
-	const emits = defineEmits(['cancel', 'delete']);
+const emits = defineEmits(['cancel', 'delete']);
 
-	defineProps({
-		text: String,
-	});
+defineProps({
+	text: String,
+});
 
-	function cancelButton() {
-		emits('cancel');
-	}
+function cancelButton() {
+	emits('cancel');
+}
 
-	function deleteButton() {
-		emits('delete');
-	}
+function deleteButton() {
+	emits('delete');
+}
 </script>

@@ -1,9 +1,9 @@
 <template>
 	<div class="">
-		<div v-if="editName">
-			<input ref="textRef" type="text" class="form-control editable" placeholder="Digite um nome" v-model="textChange" @keypress="closeEdit" @blur="closeEdit($event, true)" />
+		<div v-if="editName" class="form-control">
+			<input ref="textRef" type="text" class="editable" placeholder="Digite o que fazer" v-model="textChange" @keypress="closeEdit" @blur="closeEdit($event, true)" />
 		</div>
-		<div v-else class="px-2">
+		<div v-else class="form-control">
 			<div v-if="small">
 				<div class="" role="button" @click="openEdit">{{ textChange }}</div>
 			</div>
