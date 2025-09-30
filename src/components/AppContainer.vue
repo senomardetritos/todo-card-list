@@ -78,6 +78,7 @@ function addTemplates(selected) {
 function saveCards() {
 	save(cards.value);
 	key_card.value = Date.now()
+	route.value = 'home'
 }
 
 </script>
