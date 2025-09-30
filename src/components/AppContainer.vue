@@ -1,7 +1,9 @@
 <template>
 	<div>
-		<AppHeader @add-card="addCard" @add-by-template="addByTemplate" />
-		<AppHome :key="key_card" />
+		<AppHeader @add-card="addCard" @add-by-template="addByTemplate" @show-dashboard="route = 'home'"
+			@show-report="route = 'report'" />
+		<AppHome :key="key_card" v-if="route == 'home'" />
+		<AppReport :key="key_card" v-if="route == 'report'" />
 		<div class="row pt-5" v-if="!cards || Object.keys(cards).length == 0">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6 text-center">
@@ -23,9 +25,11 @@ import { get, save, getLastId } from '../utils/db';
 import database from '../db/default-list';
 import AppHeader from './AppHeader.vue';
 import AppHome from './AppHome.vue';
+import AppReport from './AppReport.vue';
 import TemplateModal from './TemplateModal.vue';
 
 const cards = ref({});
+const route = ref('home')
 const showModalTemplate = ref(false);
 const key_card = ref(Date.now())
 
@@ -80,7 +84,7 @@ function saveCards() {
 
 <style scoped>
 .home-text {
-    color: white;
+	color: white;
 }
 
 .home-buttons {
