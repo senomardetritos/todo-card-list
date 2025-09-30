@@ -51,7 +51,7 @@
 		const last_id = getLastId(card.value.items);
 		card.value.items[last_id] = {
 			name: '',
-			check: false,
+			status: 'todo',
 		};
 		emits('save');
 	}

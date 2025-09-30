@@ -110,26 +110,16 @@ input[type='checkbox']:checked {
 	opacity: 0.9;
 }
 
-.item-grid {
+.modal {
+	display: flex !important;
+	background: #00000066 !important;
+}
+
+.modal-dialog {
+	width: 100vw !important;
 	display: flex;
-	flex-direction: row;
-}
-
-.item-col-1 {
-	width: 30px;
-	align-self: center;
-	margin-right: 0px;
-}
-
-.item-col-3 {
-	width: 30px;
-	align-self: center;
-	justify-items: end;
-	margin-left: 10px;
-}
-
-.item-col-2 {
-	flex: auto;
+	align-items: center;
+	justify-content: center;
 }
 
 .modal-content {
@@ -139,14 +129,4 @@ input[type='checkbox']:checked {
 .modal-header {
 	font-size: 24px !important;
 	font-weight: 600;
-}
-
-.modal {
-	display: flex !important;
-	background: #00000066 !important;
-}
-
-.modal-dialog {
-	width: 100vw !important;
-	align-self: center;
 }
