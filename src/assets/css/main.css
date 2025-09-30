@@ -1,7 +1,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	background: #f9f7f7;
+	background-color: #3a3a3a;
 }
 
 #app {
@@ -12,6 +12,15 @@ body {
 	background-color: #3a3a3a;
 	padding: 0;
 	margin: 0;
+}
+
+hr {
+	color: inherit;
+	border: 0;
+	border-top: 1px solid #ddd;
+	opacity: 1;
+	height: 1px;
+	width: 100%;
 }
 
 .menu {
@@ -145,7 +154,8 @@ body {
 	border: 0 !important;
 }
 
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
 	font-size: 24px !important;
 	font-weight: 600;
 	display: flex;
@@ -171,5 +181,7 @@ body {
 
 .modal-body {
 	display: flex;
+	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }

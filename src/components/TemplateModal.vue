@@ -10,7 +10,8 @@
 				</div>
 				<div class="modal-body">
 					<div class="template-items">
-						<div :class="'template-item ' + (selected.includes(item.title) ? 'selected' : '')" v-for="(item, i) in database" :key="i" @click="changeSelected(item.title)">
+						<div :class="'template-item ' + (selected.includes(item.title) ? 'selected' : '')"
+							v-for="(item, i) in database" :key="i" @click="changeSelected(item.title)">
 							{{ item.title }}
 						</div>
 					</div>
@@ -32,63 +33,66 @@
 </template>
 
 <script setup>
-	import { defineEmits, defineProps, ref } from 'vue';
-	import database from '../db/default-list';
+import { defineEmits, defineProps, ref } from 'vue';
+import database from '../db/default-list';
 
-	const emits = defineEmits(['cancel', 'confirm']);
-	const selected = ref([]);
+const emits = defineEmits(['cancel', 'confirm']);
+const selected = ref([]);
 
-	defineProps({
-		text: String,
-	});
+defineProps({
+	text: String,
+});
 
-	function changeSelected(value) {
-		if (selected.value.includes(value)) {
-			const data = [];
-			selected.value.map((item) => {
-				if (item != value) data.push(item);
-			});
-			selected.value = data;
-		} else {
-			selected.value.push(value);
-		}
-	}
-
-	function selectAll() {
+function changeSelected(value) {
+	if (selected.value.includes(value)) {
 		const data = [];
-		database.map((item) => {
-			data.push(item.title);
+		selected.value.map((item) => {
+			if (item != value) data.push(item);
 		});
 		selected.value = data;
+	} else {
+		selected.value.push(value);
 	}
+}
 
-	function unselectAll() {
-		selected.value = [];
-	}
+function selectAll() {
+	const data = [];
+	database.map((item) => {
+		data.push(item.title);
+	});
+	selected.value = data;
+}
 
-	function cancelButton() {
-		emits('cancel');
-	}
+function unselectAll() {
+	selected.value = [];
+}
 
-	function confirmButton() {
-		emits('confirm', selected.value);
-	}
+function cancelButton() {
+	emits('cancel');
+}
+
+function confirmButton() {
+	emits('confirm', selected.value);
+}
 </script>
 
 <style lang="css" scoped>
-	.template-items {
-		display: flex;
-		gap: 16px;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-	.template-item {
-		width: 47%;
-		padding: 4px 8px;
-		cursor: pointer;
-	}
-	.template-item.selected {
-		background: #eeeeee;
-		box-shadow: 0px 0px 1px 1px #dddddd;
-	}
+.template-items {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.template-item {
+	width: 47%;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+
+.template-item.selected {
+	background: #eeeeee;
+	box-shadow: 0px 0px 1px 1px #dddddd;
+}
 </style>
